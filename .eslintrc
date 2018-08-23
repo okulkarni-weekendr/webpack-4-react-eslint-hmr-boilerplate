@@ -1,6 +1,5 @@
 {
-    "extends": ["standard", "eslint:recommended", "plugin:react/recommended"],
-    "plugins": ["react"],
+    "plugins": ["react","babel"],
     "parser": "babel-eslint",
     "env": {
         "es6": true,
@@ -14,7 +13,11 @@
             "experimentalObjectRestSpread": true
         }
     },
+
     "rules": {
+        "strict": 0,
+        "no-invalid-this": 0,
+        "babel/no-invalid-this": 1,
         "no-console": [2, {"allow": ["warn", "error"]}],
         "semi": [2, "never"],
         "no-extra-semi": 2,
