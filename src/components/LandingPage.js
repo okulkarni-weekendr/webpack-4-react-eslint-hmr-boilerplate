@@ -1,11 +1,5 @@
-import React from "react"
+import React from "react";
 
-const LandingPage = props => {
-  return (
-    <div>
-      Oneview Analytics Services(OVAL)
-    </div>
-  )
-}
+const LandingPage = props => <div>Oneview Analytics Services(OVAL)</div>;
 
-export default LandingPage
+export default LandingPage;

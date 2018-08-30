@@ -1,6 +1,8 @@
-import React from "react"
-import * as d3 from "d3"
-import chroma from "chroma-js"
+/* eslint-disable no-param-reassign,react/prop-types,jsx-a11y/mouse-events-have-key-events */
+/* eslint-disable react/destructuring-assignment */
+import React from 'react'
+import * as d3 from 'd3'
+import chroma from 'chroma-js'
 
 class GlobalImpressionErrorTracker extends React.Component {
   constructor(props) {
@@ -17,12 +19,12 @@ class GlobalImpressionErrorTracker extends React.Component {
         .domain([0, d3.max(this.props.data)])
         .range([0, this.props.height]),
 
-      color: chroma.scale(["yellow", "navy"]).mode("hsl")
+      color: chroma.scale(['yellow', 'navy']).mode('hsl')
     }
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    let { widthScale, heightScale } = prevState
+    const { widthScale, heightScale } = prevState
 
     widthScale.domain(d3.range(0, nextProps.data.length))
     heightScale.domain([0, d3.max(nextProps.data)])
@@ -39,7 +41,8 @@ class GlobalImpressionErrorTracker extends React.Component {
     return (
       <g
         transform={`translate(${x}, ${y})`}
-        onMouseOut={() => highlightBar(null)}>
+        onMouseOut={() => highlightBar(null)}
+      >
         {data.map((d, i) => (
           <rect
             x={widthScale(i)}
@@ -53,7 +56,8 @@ class GlobalImpressionErrorTracker extends React.Component {
                   : this.state.color(1 - d)
             }}
             onMouseOver={() => highlightBar(i)}
-            key={i}/>
+            key={i}
+          />
         ))}
       </g>
     )
