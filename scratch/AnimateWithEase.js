@@ -1,4 +1,4 @@
-/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/destructuring-assignment,no-param-reassign */
 import React from "react";
 import PropTypes from "prop-types";
 

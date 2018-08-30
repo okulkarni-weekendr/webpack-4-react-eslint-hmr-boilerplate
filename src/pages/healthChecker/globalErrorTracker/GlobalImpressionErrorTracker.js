@@ -43,6 +43,7 @@ class GlobalImpressionErrorTracker extends React.Component {
         transform={`translate(${x}, ${y})`}
         onMouseOut={() => highlightBar(null)}
       >
+        {/* eslint-disable react/no-array-index-key */}
         {data.map((d, i) => (
           <rect
             x={widthScale(i)}
